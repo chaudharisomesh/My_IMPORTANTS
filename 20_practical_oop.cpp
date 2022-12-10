@@ -1,0 +1,37 @@
+class Node {
+private:
+int key;
+Node* next;
+/* Other members of Node Class */
+// Now class LinkedList can
+// access private members of Node
+friend class LinkedList;
+};
+// Example:
+#include<iostream>
+using namespace std;
+class A
+{
+int x;
+public:
+A()
+{
+x=10;
+}
+friend class B; //friend class
+};
+class B
+{
+public:
+void display(A &t)
+{
+cout<<endl<<"The value of x="<<t.x;
+}
+};
+main()
+{
+A _a;
+B _b;
+_b.display(_a);
+return 0;
+}
